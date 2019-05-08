@@ -1,0 +1,11 @@
+<category>
+    <pattern>Who is Stefanos Stoikos</pattern>
+    <template>Stefanos Stoikos is 20 years old and lives in Belgium</template>
+</category>
+
+<category>
+    <pattern>Do you know who * is</pattern> <!-- De waarde van * gaat gestuurd worden in de <star/> element in de template -->
+    <template>
+    <srai>Who is<star/></srai> <!-- De waarde van * gaat opgevangen worden in de <star/> element -->
+    </template>
+</category>
