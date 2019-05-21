@@ -1,22 +1,19 @@
 {
-  "name": "user-bot",
+  "name": "zbeub",
   "version": "1.0.0",
-  "description": "Bot for the users",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.13.4",
+    "mysql": "^2.10.2",
+    "request": "^2.88.0"
+  },
+  "description": "hahah",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "bot",
-    "user",
-    "nodejs"
-  ],
-  "author": "stefanos stoikos",
+  "author": "stef",
   "license": "ISC",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.19.0",
-    "express": "^4.16.4",
-    "request": "^2.88.0"
-  }
+  "devDependencies": {},
+  "keywords": []
 }

@@ -195,6 +195,23 @@ function translateSentence(req, res)
 {
   var url = "https://sandbox.api.sap.com/mlfs/api/v2/text/translation?$format=json";
 
+  
+  console.log(req.body.targetLanguages[0]);
+
+  var initial;
+
+  if(req.body.targetLanguages[0] == "French" || req.body.targetLanguages[0] == "fr" || req.body.targetLanguages[0] == "french" || req.body.targetLanguages[0] == "français" || req.body.targetLanguages[0] == "francais" || req.body.targetLanguages[0] == "Französisch" || req.body.targetLanguages[0] == "Frans"){
+    initial = "fr";
+  }
+
+  if(req.body.targetLanguages[0] == "Dutch" || req.body.targetLanguages[0] == "nl" || req.body.targetLanguages[0] == "dutch" || req.body.targetLanguages[0] == "néerlandais" || req.body.targetLanguages[0] == "Niederländisch"){
+    initial = "nl";
+  }
+  
+  if(req.body.targetLanguages[0] == "German" || req.body.targetLanguages[0] == "de" || req.body.targetLanguages[0] == "german" || req.body.targetLanguages[0] == "allemand" || req.body.targetLanguages[0] == "Duits"){
+    initial = "de";
+  }
+
   request(
     {
         method: 'POST',
@@ -205,9 +222,7 @@ function translateSentence(req, res)
         json: {
             "sourceLanguage": "en",
             "targetLanguages": [
-              "de",
-              "fr",
-              "nl"
+              initial
             ],
             "units": [
               {
@@ -220,7 +235,7 @@ function translateSentence(req, res)
       
      // var response = JSON.parse(body);
       
-
+      
     
       var items = body.units[0].translations;
       var iter = body.units[0].translations.length;
@@ -237,7 +252,7 @@ function translateSentence(req, res)
         replies: [
           {
           type: 'text', 
-          content: "Translation: " + items[2].value
+          content: "Translation: " + items[0].value
                   
         }
       ]
